@@ -1,0 +1,10 @@
+services:
+  wm-terminal:
+    build: .
+    container_name: wm-terminal
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "8000:8000"   # ⚠ ouvert sur le LAN : il n'y a pas d'authentification sur l'interface
+    volumes:
+      - ./data:/data
